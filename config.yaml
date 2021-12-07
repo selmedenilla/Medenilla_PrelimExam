@@ -1,0 +1,12 @@
+---
+- hosts: 192.168.56.102
+  roles:
+    - python
+    - java
+    - role: motd
+      vars:
+        motd: "Ansible Managed node by rmedenilla"
+    - role: create_user
+      vars:
+        username: "cpe1911444"
+        name: "Rosselle Medenilla"

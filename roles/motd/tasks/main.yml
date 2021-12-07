@@ -1,0 +1,12 @@
+---
+# tasks file for motd
+- name: motd
+  copy:
+    content: " \n"
+    dest: /etc/mptd
+
+- name: disable default motd
+  file:
+    dest: "/etc/update-motd.d/"
+    mode: "u-x,g-x,o-x"
+    recurse: yes

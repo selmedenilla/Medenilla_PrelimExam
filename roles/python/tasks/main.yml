@@ -1,0 +1,19 @@
+---
+# tasks file for python
+- name: install python3
+  apt:
+   name: python3
+   state: latest
+   update_cache: yes
+
+- name: install pip3
+  apt:
+   name: python3-pip
+   state: latest
+   update_cache: yes
+
+- name: use pip3 as default pip
+  command: update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
+
+- name: use python3 as default python
+  command: update-alternatives --install /usr/bin/python python /usr/bin/python3 10
